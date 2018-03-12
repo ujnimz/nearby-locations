@@ -15,3 +15,4 @@ GOOGLE+API+KEY = Place your Google API key here
 Create one here: https://console.developers.google.com
 
 
+Important: Your server must be SSL secured to run HTML5 Geo location.
