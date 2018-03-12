@@ -45,7 +45,7 @@
 		$center_lat = $_GET['ulat'];
 		$center_lng = $_GET['ulng'];
 				
-		$url_nearby_api="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$center_lat.",".$center_lng."&radius=1000&type=YOUR+LOCATION+TYPE&keyword=YOUR+LOCATION+NAME&key=AIzaSyBdcHcmKMHBKHL2VXCEc5hVWewif3x60Tk";
+		$url_nearby_api="https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=".$center_lat.",".$center_lng."&radius=1000&type=YOUR+LOCATION+TYPE&keyword=YOUR+LOCATION+NAME&key=GOOGLE+API+KEY";
 		//echo $url_nearby_api;
 	
 		$ch = curl_init();
@@ -69,7 +69,7 @@
 			$option_lng = $nearby_option['geometry']['location']['lng'];
 			//echo $option_id;
 
-			$url_directions_api="https://maps.googleapis.com/maps/api/directions/json?origin=".$center_lat.",".$center_lng."&destination=place_id:".$option_id."&key=AIzaSyBdcHcmKMHBKHL2VXCEc5hVWewif3x60Tk";
+			$url_directions_api="https://maps.googleapis.com/maps/api/directions/json?origin=".$center_lat.",".$center_lng."&destination=place_id:".$option_id."&key=GOOGLE+API+KEY";
 			
 			$ch_2 = curl_init();
 			curl_setopt($ch_2, CURLOPT_SSL_VERIFYPEER, false);
@@ -129,7 +129,7 @@
 			width="100%"
 			height="650"
 			frameborder="0" style="border:0px"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdcHcmKMHBKHL2VXCEc5hVWewif3x60Tk&q=place_id:<?php echo $place_id; ?>" allowfullscreen>
+			src="https://www.google.com/maps/embed/v1/place?key=GOOGLE+API+KEY&q=place_id:<?php echo $place_id; ?>" allowfullscreen>
 			</iframe>
 		<?php } else { ?>
 			<div style="padding: 20px;">
@@ -139,7 +139,7 @@
 			width="100%"
 			height="650"
 			frameborder="0" style="border:0px"
-			src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBdcHcmKMHBKHL2VXCEc5hVWewif3x60Tk&q=<?php echo $center_lat.','.$center_lng; ?>" allowfullscreen>
+			src="https://www.google.com/maps/embed/v1/place?key=GOOGLE+API+KEY&q=<?php echo $center_lat.','.$center_lng; ?>" allowfullscreen>
 			</iframe>
 			</div>
 		<?php } ?>
